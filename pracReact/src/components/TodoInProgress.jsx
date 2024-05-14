@@ -1,18 +1,29 @@
 import Todo from "./Todo";
 
 const TodoInProgress = ({ todos, setTodos }) => {
-  const workingListStyle = {
-    display: "flex",
-    width: "1200px",
-    height: "120px",
+  
+  const style = {
+    workingSection: {
+      padding: "0px 10px 0px 10px",
+    },
+    workingTitle: {
+      fontSize: "18px",
+      marginBottom: "0px",
+      textIndent: "15px",
+    },
+    workingList: {
+      display: "flex",
+      width: "800px",
+      height: "120px",
+    },
   };
 
   return (
-    <div>
+    <div style={style.workingSection}>
       <div>
-        <h2>Working...🔥</h2>
+        <h2 style={style.workingTitle}>Working...🧠</h2>
       </div>
-      <div style={workingListStyle}>
+      <div style={style.workingList}>
         {/* 진행중인 투두리스트가 생성될 부분 */}
         {todos.map((progress) => {
           if (progress.isDone === false) {
@@ -32,6 +43,6 @@ const TodoInProgress = ({ todos, setTodos }) => {
       </div>
     </div>
   );
-}
+};
 
-export default TodoInProgress
+export default TodoInProgress;

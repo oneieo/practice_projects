@@ -1,18 +1,60 @@
-
 const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
+
   const style = {
     todoBox: {
-      border: "1px solid black",
-      borderRadius: "5px",
-      padding: "10px",
       margin: "10px",
+      width: "160px",
       height: "80px",
+      padding: "10px 10px 10px 10px",
+      borderRadius: "10px",
+      backgroundColor: "#e5e5e5",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
     },
     title: {
       fontWeight: "bold",
+      fontSize: "14px",
+      overflow: "hidden",
+      marginBottom: "5px",
     },
     content: {
-      fontSize: "13px",
+      fontSize: "11px",
+      height: "35px",
+      overflow: "hidden",
+      marginBottom: "10px",
+    },
+    buttons: {
+      display: "flex",
+      justifyContent: "right",
+      gap: "5px",
+    },
+    deleteBtn: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      fontSize: "9px",
+      width: "15px",
+      height: "20px",
+      backgroundColor: "#FFB3D2"
+    },
+    completeBtn: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      fontSize: "9px",
+      width: "15px",
+      height: "20px",
+      backgroundColor: "#7DD25E",
+    },
+    cancelBtn: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      fontSize: "9px",
+      width: "10px",
+      height: "20px",
+      backgroundColor: "#92C4FF",
     },
   };
 
@@ -22,8 +64,6 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
   };
 
   const clickCompleteBtn = () => {
-    // 완료버튼이 작동한 todo의 isDone을 true로 변경하고
-    // isDone이 false인 상태의 투두박스들로 setTodos
     const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
         return { ...todo, isDone: true };
@@ -34,8 +74,6 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
   };
 
   const clickCancelBtn = () => {
-    // 취소버튼이 작동한 todo의 isDone을 false로 변경하고,
-    // isDone이 true인 상태의 투두박스들로 setTodos
     const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
         return { ...todo, isDone: false };
@@ -50,9 +88,9 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
       <div style={style.todoBox}>
         <div style={style.title}>{title}</div>
         <div style={style.content}>{content}</div>
-        <div>
-          <button onClick={clickDeleteBtn}>삭제하기</button>
-          <button onClick={clickCompleteBtn}>완료</button>
+        <div style={style.buttons}>
+          <button onClick={clickDeleteBtn} style={style.deleteBtn}>✕</button>
+          <button onClick={clickCompleteBtn} style={style.completeBtn}>✓</button>
         </div>
       </div>
     );
@@ -61,9 +99,9 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
       <div style={style.todoBox}>
         <div style={style.title}>{title}</div>
         <div style={style.content}>{content}</div>
-        <div>
-          <button onClick={clickDeleteBtn}>삭제하기</button>
-          <button onClick={clickCancelBtn}>취소</button>
+        <div style={style.buttons}>
+          <button onClick={clickDeleteBtn} style={style.deleteBtn}>✕</button>
+          <button onClick={clickCancelBtn} style={style.cancelBtn}>↺</button>
         </div>
       </div>
     );
