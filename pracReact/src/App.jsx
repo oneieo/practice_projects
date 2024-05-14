@@ -102,7 +102,7 @@ function TodoInProgress({ todos, setTodos }) {
         <h2>Working...🔥</h2>
       </div>
       <div style={workingListStyle}>
-        {/* 진행중인 투두리스트가 동적으로 생성될 부분 */}
+        {/* 진행중인 투두리스트가 생성될 부분 */}
         {todos.map((progress) => {
           if (progress.isDone === false) {
             return (
@@ -136,7 +136,7 @@ function TodoFinished({ todos, setTodos, setIsDone }) {
         <h2>Done...✅</h2>
       </div>
       <div style={doneListStyle}>
-        {/* 완료된 투두리스트가 이 부분으로 옮겨져야함 */}
+        {/* 완료된 투두리스트가 옮겨질 부분 */}
         {todos.map((progress) => {
           if (progress.isDone === true) {
             return (
@@ -181,8 +181,8 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
   };
 
   const clickCompleteBtn = () => {
-    // isDone을 true로 변경하고
-    // isDone이 false인 상태의 투두박스들로 setTodos...
+    // 완료버튼이 작동한 todo의 isDone을 true로 변경하고
+    // isDone이 false인 상태의 투두박스들로 setTodos
     const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
         return { ...todo, isDone: true };
@@ -193,7 +193,7 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
   };
 
   const clickCancelBtn = () => {
-    // isDone을 false로 set하고
+    // 취소버튼이 작동한 todo의 isDone을 false로 변경하고,
     // isDone이 true인 상태의 투두박스들로 setTodos
     const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
