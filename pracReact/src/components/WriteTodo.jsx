@@ -4,7 +4,7 @@ const WriteTodo = ({ title, content, isDone, todos, setTitle, setContent, setTod
   const handleContentChange = (e) => {setContent(e.target.value);};
 
   const clickAddBtn = () => {
-    const newTodos = {
+    const newTodo = {
       id: new Date().getTime(),
       title,
       content,
@@ -13,7 +13,7 @@ const WriteTodo = ({ title, content, isDone, todos, setTitle, setContent, setTod
 
     if (!title.trim() || !content.trim()) return; // 제목이나 내용이 없으면 추가되지 않음
 
-    setTodos([newTodos, ...todos]);
+    setTodos([newTodo, ...todos]);
     setTitle("");
     setContent("");
   };

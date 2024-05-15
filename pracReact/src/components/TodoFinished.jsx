@@ -9,14 +9,13 @@ const TodoFinished = ({ todos, setTodos, setIsDone }) => {
     },
     doneTitle: {
       fontSize: "18px",
-      margin: "0px auto 0px auto",
+      margin: "10px auto 0px auto",
       textIndent: "15px",
     },
     doneList: {
       display: "flex",
       width: "800px",
       height: "120px",
-      marginBottom: "20px",
     },
   };
 

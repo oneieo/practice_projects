@@ -29,7 +29,7 @@ function App() {
     {
       id: new Date().getTime() + 3,
       title: "맛점하기",
-      content: "버거킹 통새우와퍼",
+      content: "통새우와퍼♥",
       isDone: true,
     },
   ]);
@@ -45,6 +45,7 @@ function App() {
     mainBox: {
       minWidth: "800px",
       maxWidth: "1200px",
+      height: "460px",
       margin: "0 auto",
       color: "#333333",
       backgroundColor: "#f6f6f6",
