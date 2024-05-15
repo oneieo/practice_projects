@@ -11,7 +11,7 @@ const WriteTodo = ({ title, content, isDone, todos, setTitle, setContent, setTod
       isDone,
     };
 
-    if (!title || !content) return; // 제목이나 내용이 없으면 추가되지 않음
+    if (!title.trim() || !content.trim()) return; // 제목이나 내용이 없으면 추가되지 않음
 
     setTodos([newTodos, ...todos]);
     setTitle("");

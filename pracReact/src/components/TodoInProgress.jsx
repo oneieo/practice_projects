@@ -5,6 +5,7 @@ const TodoInProgress = ({ todos, setTodos }) => {
   const style = {
     workingSection: {
       padding: "0px 10px 0px 10px",
+      overflowX: "scroll",        
     },
     workingTitle: {
       fontSize: "18px",

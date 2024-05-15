@@ -36,12 +36,11 @@ function App() {
 
   const style = {
     layout: {
-      //flexbox
       width: "100vw",
       height: "100vh",
       display: "flex",
-      justifyContent:"center",
-      alignItems:"center",
+      justifyContent: "center",
+      alignItems: "center",
     },
     mainBox: {
       minWidth: "800px",
@@ -55,9 +54,8 @@ function App() {
     },
     mainTitle: {
       textIndent: "25px",
-    }
+    },
   };
-
 
   return (
     <div style={style.layout}>

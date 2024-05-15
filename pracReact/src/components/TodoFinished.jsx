@@ -5,6 +5,7 @@ const TodoFinished = ({ todos, setTodos, setIsDone }) => {
   const style = {
     doneSection: {
       padding: "0px 10px 0px 10px",
+      overflowX: "scroll",
     },
     doneTitle: {
       fontSize: "18px",

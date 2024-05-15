@@ -16,10 +16,11 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
       fontWeight: "bold",
       fontSize: "14px",
       overflow: "hidden",
-      marginBottom: "5px",
+      paddingBottom: "10px",
     },
     content: {
       fontSize: "11px",
+      width: "160px",
       height: "35px",
       overflow: "hidden",
       marginBottom: "10px",
@@ -83,29 +84,28 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
     setTodos(updatedTodos);
   };
 
-  if (isDone === false) {
-    return (
+  return (
       <div style={style.todoBox}>
         <div style={style.title}>{title}</div>
         <div style={style.content}>{content}</div>
         <div style={style.buttons}>
           <button onClick={clickDeleteBtn} style={style.deleteBtn}>✕</button>
-          <button onClick={clickCompleteBtn} style={style.completeBtn}>✓</button>
+          <button onClick={isDone === false ? clickCompleteBtn : clickCancelBtn} style={isDone === false ? style.completeBtn : style.cancelBtn}>{isDone === false ? "✓" : "↺"}</button>
         </div>
       </div>
-    );
-  } else {
-    return (
-      <div style={style.todoBox}>
-        <div style={style.title}>{title}</div>
-        <div style={style.content}>{content}</div>
-        <div style={style.buttons}>
-          <button onClick={clickDeleteBtn} style={style.deleteBtn}>✕</button>
-          <button onClick={clickCancelBtn} style={style.cancelBtn}>↺</button>
-        </div>
-      </div>
-    );
-  }
+  );
+ //else {
+  //   return (
+  //     <div style={style.todoBox}>
+  //       <div style={style.title}>{title}</div>
+  //       <div style={style.content}>{content}</div>
+  //       <div style={style.buttons}>
+  //         <button onClick={clickDeleteBtn} style={style.deleteBtn}>✕</button>
+  //         <button onClick={clickCancelBtn} style={style.cancelBtn}>↺</button>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 };
 
 export default Todo;
