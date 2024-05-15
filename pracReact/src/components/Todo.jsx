@@ -66,20 +66,14 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
 
   const clickCompleteBtn = () => {
     const updatedTodos = todos.map((todo) => {
-      if (todo.id === id) {
-        return { ...todo, isDone: true };
-      }
-      return todo;
+      return todo.id === id ? { ...todo, isDone: true } : todo;
     });
     setTodos(updatedTodos);
   };
 
   const clickCancelBtn = () => {
     const updatedTodos = todos.map((todo) => {
-      if (todo.id === id) {
-        return { ...todo, isDone: false };
-      }
-      return todo;
+      return todo.id === id ? { ...todo, isDone: false } : todo;
     });
     setTodos(updatedTodos);
   };
