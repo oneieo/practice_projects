@@ -11,7 +11,10 @@ const WriteTodo = ({ title, content, isDone, todos, setTitle, setContent, setTod
       isDone,
     };
 
-    if (!title.trim() || !content.trim()) return; // 제목이나 내용이 없으면 추가되지 않음
+    if (!title.trim() || !content.trim()) {
+      alert("제목과 내용을 입력해주세요.");
+      return;
+    }  // 제목이나 내용이 없으면 추가되지 않음
 
     setTodos([newTodo, ...todos]);
     setTitle("");
