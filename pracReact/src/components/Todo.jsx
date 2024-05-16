@@ -84,7 +84,9 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
         <div style={style.content}>{content}</div>
         <div style={style.buttons}>
           <button onClick={clickDeleteBtn} style={style.deleteBtn}>✕</button>
-          <button onClick={isDone === false ? clickCompleteBtn : clickCancelBtn} style={isDone === false ? style.completeBtn : style.cancelBtn}>{isDone === false ? "✓" : "↺"}</button>
+          {isDone === false ? 
+          <button onClick={clickCompleteBtn} style={style.completeBtn}>✓</button> 
+          : <button onClick={clickCancelBtn} style={style.cancelBtn}>↺</button>}
         </div>
       </div>
   );
@@ -100,6 +102,8 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
   //     </div>
   //   );
   // }
+  // <button onClick={isDone === false ? clickCompleteBtn : clickCancelBtn} style={isDone === false ? style.completeBtn : style.cancelBtn}>{isDone === false ? "✓" : "↺"}</button>
+
 };
 
 export default Todo;
