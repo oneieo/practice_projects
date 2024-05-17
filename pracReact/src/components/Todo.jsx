@@ -60,22 +60,19 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
   };
 
   const clickDeleteBtn = () => {
-    const updatedTodos = todos.filter((todo) => todo.id != id);
-    setTodos(updatedTodos);
+    setTodos(todos.filter((todo) => todo.id != id));
   };
 
   const clickCompleteBtn = () => {
-    const updatedTodos = todos.map((todo) => {
+    setTodos(todos.map((todo) => {
       return todo.id === id ? { ...todo, isDone: true } : todo;
-    });
-    setTodos(updatedTodos);
+    }));
   };
 
   const clickCancelBtn = () => {
-    const updatedTodos = todos.map((todo) => {
+    setTodos(todos.map((todo) => {
       return todo.id === id ? { ...todo, isDone: false } : todo;
-    });
-    setTodos(updatedTodos);
+    }));
   };
 
   return (
@@ -90,20 +87,6 @@ const Todo = ({ id, title, content, isDone, todos, setTodos }) => {
         </div>
       </div>
   );
- //else {
-  //   return (
-  //     <div style={style.todoBox}>
-  //       <div style={style.title}>{title}</div>
-  //       <div style={style.content}>{content}</div>
-  //       <div style={style.buttons}>
-  //         <button onClick={clickDeleteBtn} style={style.deleteBtn}>✕</button>
-  //         <button onClick={clickCancelBtn} style={style.cancelBtn}>↺</button>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-  // <button onClick={isDone === false ? clickCompleteBtn : clickCancelBtn} style={isDone === false ? style.completeBtn : style.cancelBtn}>{isDone === false ? "✓" : "↺"}</button>
-
 };
 
 export default Todo;
